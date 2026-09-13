@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Http\Requests\StoreContactRequest;
+use App\Models\Contact;
 
 
 class ContactController extends Controller
@@ -50,6 +51,30 @@ class ContactController extends Controller
 
     }
 
+
+
+    public function store(StoreContactRequest $request)
+    {
+
+    $validated = $request->validated();
+
+    $contact = Contact::create($validated);
+
+    $contact->tags()->attach($validated['tag_ids'] ?? []);
+
+    Return redirect('/thanks');
+
+
+    }
+
+
+
+    public function thanks()
+    {
+
+    Return view('contact.thanks');
+
+    }
 
 
 
