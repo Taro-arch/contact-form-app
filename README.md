@@ -296,15 +296,12 @@ Docker 29.7.2
 
 ## APIエンドポイント一覧
 
-メソッド    URI                  処理
-
-GET        /                   お問い合わせ入力画面を表示
-
-POST       /contacts/confirm   入力内容を確認画面へ送信
-
-POST       /contacts           お問い合わせをデータベースに保存
-
-GET        /thanks             送信完了画面を表示
+| メソッド | URI | 処理 |
+|---|---|---|
+| GET | `/` | お問い合わせ入力画面を表示 |
+| POST | `/contacts/confirm` | 入力内容を確認画面へ送信 |
+| POST | `/contacts` | お問い合わせをデータベースに保存 |
+| GET | `/thanks` | 送信完了画面を表示 |
 
 
 
